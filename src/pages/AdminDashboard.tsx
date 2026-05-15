@@ -254,7 +254,7 @@ export default function AdminDashboard() {
     const doc = new jsPDF();
     
     // Header
-    doc.setFillColor(37, 99, 235); // blue-600
+    doc.setFillColor(37, 99, 235); // green-600
     doc.rect(0, 0, 210, 40, 'F');
     doc.setTextColor(255, 255, 255);
     doc.setFontSize(22);
@@ -379,7 +379,7 @@ export default function AdminDashboard() {
             className={cn(
               "px-6 py-3 text-sm font-medium flex items-center gap-2 border-b-2 transition-colors",
               activeTab === 'dashboard' 
-                ? "border-blue-500 text-blue-600 dark:text-blue-400" 
+                ? "border-green-500 text-green-600 dark:text-green-400" 
                 : "border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300"
             )}
           >
@@ -390,7 +390,7 @@ export default function AdminDashboard() {
             className={cn(
               "px-6 py-3 text-sm font-medium flex items-center gap-2 border-b-2 transition-colors",
               activeTab === 'settings' 
-                ? "border-blue-500 text-blue-600 dark:text-blue-400" 
+                ? "border-green-500 text-green-600 dark:text-green-400" 
                 : "border-transparent text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300"
             )}
           >
@@ -403,7 +403,7 @@ export default function AdminDashboard() {
             {/* Statistics */}
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
               {[
-                { label: 'Total Pendaftar', value: data.length, color: 'bg-blue-500 text-white border-blue-600 shadow-md' },
+                { label: 'Total Pendaftar', value: data.length, color: 'bg-green-500 text-white border-green-600 shadow-md' },
                 { label: 'Lulus', value: data.filter(item => item.Status === 'Lulus').length, color: 'bg-green-500 text-white border-green-600 shadow-md' },
                 { label: 'Tidak Lulus', value: data.filter(item => item.Status === 'Tidak Lulus').length, color: 'bg-red-500 text-white border-red-600 shadow-md' },
                 { label: 'Laki-laki', value: data.filter(item => { const jk = getFieldValue(item, 'Jenis Kelamin'); return jk && jk.toLowerCase().includes('laki'); }).length, color: 'bg-indigo-500 text-white border-indigo-600 shadow-md' },
@@ -427,7 +427,7 @@ export default function AdminDashboard() {
                   placeholder="Cari Nama, NIK, atau No. Pendaftaran..."
                   value={searchTerm}
                   onChange={(e) => { setSearchTerm(e.target.value); setCurrentPage(1); }}
-                  className={cn("block w-full pl-10 pr-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition-colors", 
+                  className={cn("block w-full pl-10 pr-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 sm:text-sm transition-colors", 
                     isDarkMode ? "bg-slate-900 border-slate-700 text-white placeholder-slate-500" : "bg-white border-slate-300 text-slate-900"
                   )}
                 />
@@ -439,7 +439,7 @@ export default function AdminDashboard() {
                   <select
                     value={statusFilter}
                     onChange={(e) => { setStatusFilter(e.target.value); setCurrentPage(1); }}
-                    className={cn("block w-full py-2 pl-3 pr-10 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition-colors",
+                    className={cn("block w-full py-2 pl-3 pr-10 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 sm:text-sm transition-colors",
                       isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300 text-slate-900"
                     )}
                   >
@@ -452,7 +452,7 @@ export default function AdminDashboard() {
                 <button
                   onClick={fetchData}
                   disabled={isLoading}
-                  className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors shadow-sm whitespace-nowrap disabled:opacity-70"
+                  className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors shadow-sm whitespace-nowrap disabled:opacity-70"
                 >
                   <RefreshCw size={16} className={cn(isLoading && "animate-spin")} /> Segarkan
                 </button>
@@ -469,7 +469,7 @@ export default function AdminDashboard() {
             <div className={cn("rounded-xl shadow-sm border overflow-hidden", isDarkMode ? "bg-slate-800 border-slate-700" : "bg-white border-slate-200")}>
               <div className="overflow-x-auto">
                 <table className="min-w-full divide-y divide-slate-200 dark:divide-slate-700">
-                  <thead className={isDarkMode ? "bg-slate-700 text-slate-200" : "bg-blue-50 text-blue-800"}>
+                  <thead className={isDarkMode ? "bg-slate-700 text-slate-200" : "bg-green-50 text-green-800"}>
                     <tr>
                       <th scope="col" className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider">No. Pendaftaran</th>
                       <th scope="col" className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider">Nama Lengkap</th>
@@ -484,7 +484,7 @@ export default function AdminDashboard() {
                     {isLoading ? (
                       <tr>
                         <td colSpan={7} className="px-6 py-12 text-center">
-                          <Loader2 className="animate-spin h-8 w-8 mx-auto text-blue-500 mb-4" />
+                          <Loader2 className="animate-spin h-8 w-8 mx-auto text-green-500 mb-4" />
                           <p className={isDarkMode ? "text-slate-400" : "text-slate-500"}>Memuat data...</p>
                         </td>
                       </tr>
@@ -504,7 +504,7 @@ export default function AdminDashboard() {
                           key={item['No Pendaftaran']} 
                           className={cn("hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors")}
                         >
-                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-blue-600 dark:text-blue-400">
+                          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-green-600 dark:text-green-400">
                             {item['No Pendaftaran']}
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap">
@@ -538,7 +538,7 @@ export default function AdminDashboard() {
                                   <XCircle size={18} />
                                 </button>
                               )}
-                              <button onClick={() => printCard(item)} className="text-blue-600 hover:text-blue-900 bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/30 dark:hover:bg-blue-900/50 px-2 py-1 rounded transition-colors" title="Cetak Kartu">
+                              <button onClick={() => printCard(item)} className="text-green-600 hover:text-green-900 bg-green-50 hover:bg-green-100 dark:bg-green-900/30 dark:hover:bg-green-900/50 px-2 py-1 rounded transition-colors" title="Cetak Kartu">
                                 <Printer size={18} />
                               </button>
                             </div>
@@ -588,7 +588,7 @@ export default function AdminDashboard() {
                   className={cn(
                     "px-4 py-2 rounded-lg font-medium transition-colors whitespace-nowrap",
                     settingsTab === 'school'
-                      ? "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400"
+                      ? "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-400"
                       : "text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-700/50"
                   )}
                 >
@@ -599,7 +599,7 @@ export default function AdminDashboard() {
                   className={cn(
                     "px-4 py-2 rounded-lg font-medium transition-colors whitespace-nowrap",
                     settingsTab === 'form'
-                      ? "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400"
+                      ? "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-400"
                       : "text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-700/50"
                   )}
                 >
@@ -610,7 +610,7 @@ export default function AdminDashboard() {
                   className={cn(
                     "px-4 py-2 rounded-lg font-medium transition-colors whitespace-nowrap",
                     settingsTab === 'surat'
-                      ? "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400"
+                      ? "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-400"
                       : "text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-700/50"
                   )}
                 >
@@ -621,7 +621,7 @@ export default function AdminDashboard() {
                   className={cn(
                     "px-4 py-2 rounded-lg font-medium transition-colors whitespace-nowrap",
                     settingsTab === 'daftar-ulang'
-                      ? "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400"
+                      ? "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-400"
                       : "text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-700/50"
                   )}
                 >
@@ -632,7 +632,7 @@ export default function AdminDashboard() {
                   className={cn(
                     "px-4 py-2 rounded-lg font-medium transition-colors whitespace-nowrap",
                     settingsTab === 'kepala-sekolah'
-                      ? "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400"
+                      ? "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-400"
                       : "text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-700/50"
                   )}
                 >
@@ -643,7 +643,7 @@ export default function AdminDashboard() {
                   className={cn(
                     "px-4 py-2 rounded-lg font-medium transition-colors whitespace-nowrap",
                     settingsTab === 'panduan'
-                      ? "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400"
+                      ? "bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-400"
                       : "text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-700/50"
                   )}
                 >
@@ -660,7 +660,7 @@ export default function AdminDashboard() {
                         type="text"
                         value={localSettings.namaSekolah}
                         onChange={e => setLocalSettings({...localSettings, namaSekolah: e.target.value})}
-                        className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                        className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                       />
                     </div>
                     <div>
@@ -668,7 +668,7 @@ export default function AdminDashboard() {
                       <select
                         value={localSettings.statusPendaftaran}
                         onChange={e => setLocalSettings({...localSettings, statusPendaftaran: e.target.value as any})}
-                        className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                        className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                       >
                         <option value="Buka">Buka</option>
                         <option value="Tutup">Tutup</option>
@@ -680,7 +680,7 @@ export default function AdminDashboard() {
                         value={localSettings.alamat}
                         onChange={e => setLocalSettings({...localSettings, alamat: e.target.value})}
                         rows={2}
-                        className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                        className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                       />
                     </div>
                     <div className="md:col-span-2">
@@ -690,7 +690,7 @@ export default function AdminDashboard() {
                         value={localSettings.koordinatSekolah || ''}
                         onChange={e => setLocalSettings({...localSettings, koordinatSekolah: e.target.value})}
                         placeholder="Contoh: -6.200000, 106.816666"
-                        className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                        className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                       />
                       <p className="text-xs text-slate-500 mt-1">Gunakan format "Latitude, Longitude" (contoh: -6.200000, 106.816666). Digunakan untuk menghitung jarak rumah pendaftar ke sekolah.</p>
                     </div>
@@ -700,7 +700,7 @@ export default function AdminDashboard() {
                         type="date"
                         value={localSettings.tanggalCutoffUsia || ''}
                         onChange={e => setLocalSettings({...localSettings, tanggalCutoffUsia: e.target.value})}
-                        className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                        className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                       />
                       <p className="text-xs text-slate-500 mt-1">Tanggal yang digunakan sebagai acuan untuk menghitung usia pendaftar (contoh: 1 Juli tahun berjalan). Jika dikosongkan, menggunakan tanggal saat pengisian pendaftaran.</p>
                     </div>
@@ -710,7 +710,7 @@ export default function AdminDashboard() {
                         type="text"
                         value={localSettings.telepon}
                         onChange={e => setLocalSettings({...localSettings, telepon: e.target.value})}
-                        className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                        className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                       />
                     </div>
                     <div>
@@ -719,7 +719,7 @@ export default function AdminDashboard() {
                         type="email"
                         value={localSettings.email}
                         onChange={e => setLocalSettings({...localSettings, email: e.target.value})}
-                        className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                        className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                       />
                     </div>
                     <div>
@@ -729,7 +729,7 @@ export default function AdminDashboard() {
                         value={localSettings.tahunPendaftaran || ''}
                         onChange={e => setLocalSettings({...localSettings, tahunPendaftaran: e.target.value})}
                         placeholder="Contoh: 2024"
-                        className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                        className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                       />
                     </div>
                     <div className="md:col-span-2">
@@ -738,7 +738,7 @@ export default function AdminDashboard() {
                         value={localSettings.deskripsi}
                         onChange={e => setLocalSettings({...localSettings, deskripsi: e.target.value})}
                         rows={3}
-                        className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                        className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                       />
                     </div>
                     <div className="md:col-span-2">
@@ -753,7 +753,7 @@ export default function AdminDashboard() {
                             setLocalSettings({...localSettings, logoSekolah: compressed});
                           }
                         }}
-                        className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                        className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                       />
                       {localSettings.logoSekolah && <img src={localSettings.logoSekolah} alt="Logo Sekolah" className="mt-2 h-16 object-contain border rounded bg-white p-1" />}
                     </div>
@@ -769,7 +769,7 @@ export default function AdminDashboard() {
                             setLocalSettings({...localSettings, gambarHeaderBeranda: compressed});
                           }
                         }}
-                        className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                        className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                       />
                       {localSettings.gambarHeaderBeranda && <img src={localSettings.gambarHeaderBeranda} alt="Header Beranda" className="mt-2 h-32 object-cover border rounded bg-white" />}
                     </div>
@@ -779,7 +779,7 @@ export default function AdminDashboard() {
                         type="date"
                         value={localSettings.tanggalPengumuman || ''}
                         onChange={e => setLocalSettings({...localSettings, tanggalPengumuman: e.target.value})}
-                        className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                        className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                       />
                       <p className="text-xs text-slate-500 mt-1">Sebelum tanggal ini, pendaftar akan melihat status "Proses".</p>
                     </div>
@@ -796,7 +796,7 @@ export default function AdminDashboard() {
                           type="date"
                           value={localSettings.tanggalDaftarUlang || ''}
                           onChange={e => setLocalSettings({...localSettings, tanggalDaftarUlang: e.target.value})}
-                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                         />
                       </div>
                       <div className="md:col-span-2">
@@ -806,7 +806,7 @@ export default function AdminDashboard() {
                           onChange={e => setLocalSettings({...localSettings, persyaratanDaftarUlang: e.target.value})}
                           rows={5}
                           placeholder="1. Syarat pertama&#10;2. Syarat kedua"
-                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                         />
                       </div>
                     </div>
@@ -823,7 +823,7 @@ export default function AdminDashboard() {
                           type="text"
                           value={localSettings.namaKepalaSekolah || ''}
                           onChange={e => setLocalSettings({...localSettings, namaKepalaSekolah: e.target.value})}
-                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                           placeholder="Contoh: Drs. H. Ahmad, M.Pd."
                         />
                       </div>
@@ -839,7 +839,7 @@ export default function AdminDashboard() {
                               setLocalSettings({...localSettings, fotoKepalaSekolah: compressed});
                             }
                           }}
-                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                         />
                         {localSettings.fotoKepalaSekolah && <img src={localSettings.fotoKepalaSekolah} alt="Foto Kepala Sekolah" className="mt-2 h-32 object-cover border rounded bg-white" />}
                       </div>
@@ -850,7 +850,7 @@ export default function AdminDashboard() {
                           onChange={e => setLocalSettings({...localSettings, sambutanKepalaSekolah: e.target.value})}
                           rows={5}
                           placeholder="Masukkan kata sambutan kepala sekolah..."
-                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                         />
                       </div>
                       <div className="md:col-span-2">
@@ -860,7 +860,7 @@ export default function AdminDashboard() {
                           onChange={e => setLocalSettings({...localSettings, visiSekolah: e.target.value})}
                           rows={3}
                           placeholder="Masukkan visi sekolah..."
-                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                         />
                       </div>
                       <div className="md:col-span-2">
@@ -870,7 +870,7 @@ export default function AdminDashboard() {
                           onChange={e => setLocalSettings({...localSettings, misiSekolah: e.target.value})}
                           rows={5}
                           placeholder="1. Misi pertama&#10;2. Misi kedua"
-                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                         />
                       </div>
                     </div>
@@ -887,7 +887,7 @@ export default function AdminDashboard() {
                           type="text"
                           value={localSettings.panduanJudul || ''}
                           onChange={e => setLocalSettings({...localSettings, panduanJudul: e.target.value})}
-                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                           placeholder="Panduan Pendaftaran PPDB"
                         />
                       </div>
@@ -897,7 +897,7 @@ export default function AdminDashboard() {
                           value={localSettings.panduanDeskripsi || ''}
                           onChange={e => setLocalSettings({...localSettings, panduanDeskripsi: e.target.value})}
                           rows={2}
-                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                           placeholder="Persiapkan dokumen berikut sebelum mulai mengisi formulir pendaftaran."
                         />
                       </div>
@@ -907,7 +907,7 @@ export default function AdminDashboard() {
                           value={localSettings.panduanPeringatan || ''}
                           onChange={e => setLocalSettings({...localSettings, panduanPeringatan: e.target.value})}
                           rows={3}
-                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                           placeholder="Pastikan semua dokumen di-scan atau difoto dengan jelas dan dapat terbaca..."
                         />
                       </div>
@@ -921,7 +921,7 @@ export default function AdminDashboard() {
                               newDocs.push({ id: Date.now().toString(), icon: 'FileText', title: 'Dokumen Baru', description: 'Deskripsi dokumen' });
                               setLocalSettings({...localSettings, panduanDokumen: newDocs});
                             }}
-                            className="text-sm bg-blue-100 text-blue-700 px-3 py-1.5 rounded-md hover:bg-blue-200 transition-colors dark:bg-blue-900/40 dark:text-blue-400 dark:hover:bg-blue-900/60"
+                            className="text-sm bg-green-100 text-green-700 px-3 py-1.5 rounded-md hover:bg-green-200 transition-colors dark:bg-green-900/40 dark:text-green-400 dark:hover:bg-green-900/60"
                           >
                             + Tambah Dokumen
                           </button>
@@ -998,7 +998,7 @@ export default function AdminDashboard() {
                               newAlur.push('Langkah baru');
                               setLocalSettings({...localSettings, panduanAlur: newAlur});
                             }}
-                            className="text-sm bg-blue-100 text-blue-700 px-3 py-1.5 rounded-md hover:bg-blue-200 transition-colors dark:bg-blue-900/40 dark:text-blue-400 dark:hover:bg-blue-900/60"
+                            className="text-sm bg-green-100 text-green-700 px-3 py-1.5 rounded-md hover:bg-green-200 transition-colors dark:bg-green-900/40 dark:text-green-400 dark:hover:bg-green-900/60"
                           >
                             + Tambah Langkah
                           </button>
@@ -1047,7 +1047,7 @@ export default function AdminDashboard() {
                           type="text"
                           value={localSettings.nomorSurat || ''}
                           onChange={e => setLocalSettings({...localSettings, nomorSurat: e.target.value})}
-                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                           placeholder="Contoh: 421.2/001/SD/2026"
                         />
                       </div>
@@ -1058,7 +1058,7 @@ export default function AdminDashboard() {
                           type="text"
                           value={localSettings.tempatSurat || ''}
                           onChange={e => setLocalSettings({...localSettings, tempatSurat: e.target.value})}
-                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                           placeholder="Contoh: Jakarta"
                         />
                       </div>
@@ -1069,7 +1069,7 @@ export default function AdminDashboard() {
                           type="text"
                           value={localSettings.tanggalSurat || ''}
                           onChange={e => setLocalSettings({...localSettings, tanggalSurat: e.target.value})}
-                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                           placeholder="Contoh: 25 Juli 2026"
                         />
                       </div>
@@ -1080,7 +1080,7 @@ export default function AdminDashboard() {
                           type="text"
                           value={localSettings.namaKepalaSekolah || ''}
                           onChange={e => setLocalSettings({...localSettings, namaKepalaSekolah: e.target.value})}
-                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                           placeholder="Contoh: Drs. H. Ahmad, M.Pd."
                         />
                       </div>
@@ -1091,7 +1091,7 @@ export default function AdminDashboard() {
                           type="text"
                           value={localSettings.nipKepalaSekolah || ''}
                           onChange={e => setLocalSettings({...localSettings, nipKepalaSekolah: e.target.value})}
-                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                           placeholder="Contoh: 19700101 199512 1 001"
                         />
                       </div>
@@ -1108,7 +1108,7 @@ export default function AdminDashboard() {
                               setLocalSettings({...localSettings, kopSurat: compressed});
                             }
                           }}
-                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                         />
                         {localSettings.kopSurat && <img src={localSettings.kopSurat} alt="Kop Surat" className="mt-2 h-16 object-contain border rounded bg-white" />}
                       </div>
@@ -1125,7 +1125,7 @@ export default function AdminDashboard() {
                               setLocalSettings({...localSettings, tandaTanganKepalaSekolah: compressed});
                             }
                           }}
-                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                         />
                         {localSettings.tandaTanganKepalaSekolah && <img src={localSettings.tandaTanganKepalaSekolah} alt="Tanda Tangan" className="mt-2 h-16 object-contain border rounded bg-white" />}
                       </div>
@@ -1142,7 +1142,7 @@ export default function AdminDashboard() {
                               setLocalSettings({...localSettings, stempelSekolah: compressed});
                             }
                           }}
-                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                         />
                         {localSettings.stempelSekolah && <img src={localSettings.stempelSekolah} alt="Stempel" className="mt-2 h-16 object-contain border rounded bg-white" />}
                       </div>
@@ -1154,7 +1154,7 @@ export default function AdminDashboard() {
                           onChange={e => setLocalSettings({...localSettings, catatanTambahan: e.target.value})}
                           rows={3}
                           placeholder="Contoh: Harap membawa materai 10.000 saat daftar ulang."
-                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
+                          className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-green-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                         />
                       </div>
                     </div>
@@ -1170,7 +1170,7 @@ export default function AdminDashboard() {
                         const newFields = [...localSettings.formFields, { id: `Field-${Date.now()}`, label: 'Field Baru', type: 'text' as const, required: false }];
                         setLocalSettings({...localSettings, formFields: newFields});
                       }}
-                      className="text-sm bg-blue-100 text-blue-700 hover:bg-blue-200 px-3 py-1.5 rounded-md font-medium transition-colors dark:bg-blue-900/30 dark:text-blue-400"
+                      className="text-sm bg-green-100 text-green-700 hover:bg-green-200 px-3 py-1.5 rounded-md font-medium transition-colors dark:bg-green-900/30 dark:text-green-400"
                     >
                       + Tambah Field
                     </button>
@@ -1234,7 +1234,7 @@ export default function AdminDashboard() {
                                 newFields[index] = { ...newFields[index], required: e.target.checked };
                                 setLocalSettings({...localSettings, formFields: newFields});
                               }}
-                              className="rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+                              className="rounded border-slate-300 text-green-600 focus:ring-green-500"
                             />
                             <span className="text-sm">Wajib</span>
                           </label>
@@ -1277,7 +1277,7 @@ export default function AdminDashboard() {
                   <button
                     onClick={handleSaveSettings}
                     disabled={isSavingSettings}
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-medium transition-colors flex items-center gap-2 disabled:opacity-70"
+                    className="bg-green-600 hover:bg-green-700 text-white px-6 py-2.5 rounded-lg font-medium transition-colors flex items-center gap-2 disabled:opacity-70"
                   >
                     {isSavingSettings ? <Loader2 size={18} className="animate-spin" /> : null}
                     Simpan Pengaturan
@@ -1356,7 +1356,7 @@ export default function AdminDashboard() {
                                 href={`https://www.google.com/maps/search/?api=1&query=${selectedStudent['Koordinat Lokasi']}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-blue-600 hover:underline flex items-center gap-1"
+                                className="text-green-600 hover:underline flex items-center gap-1"
                               >
                                 {selectedStudent['Koordinat Lokasi']}
                               </a>
@@ -1367,7 +1367,7 @@ export default function AdminDashboard() {
                         {selectedStudent['Jarak ke Sekolah (km)'] && (
                           <div className="grid grid-cols-3 gap-4">
                             <dt className="text-slate-500 dark:text-slate-400">Jarak ke Sekolah</dt>
-                            <dd className="col-span-2 font-medium text-blue-700">{selectedStudent['Jarak ke Sekolah (km)']} km</dd>
+                            <dd className="col-span-2 font-medium text-green-700">{selectedStudent['Jarak ke Sekolah (km)']} km</dd>
                           </div>
                         )}
                       </dl>
@@ -1400,7 +1400,7 @@ export default function AdminDashboard() {
                               fileUrl.startsWith('data:image') ? (
                                 <img src={fileUrl} alt={field.label} className="w-full h-32 object-cover rounded-lg border" />
                               ) : (
-                                <a href={fileUrl} target="_blank" rel="noreferrer" className="text-blue-500 hover:underline text-sm flex items-center gap-2">
+                                <a href={fileUrl} target="_blank" rel="noreferrer" className="text-green-500 hover:underline text-sm flex items-center gap-2">
                                   <FileText size={16} /> Buka {field.label}
                                 </a>
                               )
