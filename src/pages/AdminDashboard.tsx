@@ -403,7 +403,7 @@ export default function AdminDashboard() {
             {/* Statistics */}
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
               {[
-                { label: 'Total Pendaftar', value: data.length, color: 'bg-green-500 text-white border-green-600 shadow-md' },
+                { label: 'Total Pendaftar', value: data.length, color: 'bg-blue-500 text-white border-blue-600 shadow-md' },
                 { label: 'Lulus', value: data.filter(item => item.Status === 'Lulus').length, color: 'bg-green-500 text-white border-green-600 shadow-md' },
                 { label: 'Tidak Lulus', value: data.filter(item => item.Status === 'Tidak Lulus').length, color: 'bg-red-500 text-white border-red-600 shadow-md' },
                 { label: 'Laki-laki', value: data.filter(item => { const jk = getFieldValue(item, 'Jenis Kelamin'); return jk && jk.toLowerCase().includes('laki'); }).length, color: 'bg-indigo-500 text-white border-indigo-600 shadow-md' },
@@ -452,7 +452,7 @@ export default function AdminDashboard() {
                 <button
                   onClick={fetchData}
                   disabled={isLoading}
-                  className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors shadow-sm whitespace-nowrap disabled:opacity-70"
+                  className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors shadow-sm whitespace-nowrap disabled:opacity-70"
                 >
                   <RefreshCw size={16} className={cn(isLoading && "animate-spin")} /> Segarkan
                 </button>
