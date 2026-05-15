@@ -69,7 +69,7 @@ export default function RegistrationForm() {
     const doc = new jsPDF();
     
     // Header
-    doc.setFillColor(37, 99, 235); // blue-600
+    doc.setFillColor(37, 99, 235); // green-600
     doc.rect(0, 0, 210, 40, 'F');
     doc.setTextColor(255, 255, 255);
     doc.setFontSize(22);
@@ -213,7 +213,7 @@ export default function RegistrationForm() {
           </p>
           <Link
             to="/"
-            className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+            className="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
           >
             Kembali ke Beranda
           </Link>
@@ -223,7 +223,7 @@ export default function RegistrationForm() {
   }
 
   const renderField = (field: any) => {
-    const commonClasses = "w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors";
+    const commonClasses = "w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors";
     
     switch (field.type) {
       case 'textarea':
@@ -255,7 +255,7 @@ export default function RegistrationForm() {
         );
       case 'file':
         return (
-          <div className="relative flex-grow border-2 border-dashed border-slate-300 rounded-xl hover:border-blue-500 transition-colors bg-slate-50 group overflow-hidden h-40">
+          <div className="relative flex-grow border-2 border-dashed border-slate-300 rounded-xl hover:border-green-500 transition-colors bg-slate-50 group overflow-hidden h-40">
             <input
               type="file"
               accept="image/jpeg, image/png, application/pdf"
@@ -268,9 +268,9 @@ export default function RegistrationForm() {
                 {previews[field.label].startsWith('data:image') ? (
                   <img src={previews[field.label]} alt="Preview" className="w-full h-full object-cover" />
                 ) : (
-                  <div className="flex flex-col items-center justify-center h-full p-4 text-center bg-blue-50">
-                    <FileText className="w-12 h-12 text-blue-500 mb-2" />
-                    <span className="text-sm text-blue-700 font-medium">File Terpilih</span>
+                  <div className="flex flex-col items-center justify-center h-full p-4 text-center bg-green-50">
+                    <FileText className="w-12 h-12 text-green-500 mb-2" />
+                    <span className="text-sm text-green-700 font-medium">File Terpilih</span>
                   </div>
                 )}
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -279,8 +279,8 @@ export default function RegistrationForm() {
               </div>
             ) : (
               <div className="flex flex-col items-center justify-center h-full p-4 text-center">
-                <Upload className="w-8 h-8 text-slate-400 mb-2 group-hover:text-blue-500 transition-colors" />
-                <span className="text-sm text-slate-500 group-hover:text-blue-600">Klik atau Drag file</span>
+                <Upload className="w-8 h-8 text-slate-400 mb-2 group-hover:text-green-500 transition-colors" />
+                <span className="text-sm text-slate-500 group-hover:text-green-600">Klik atau Drag file</span>
               </div>
             )}
           </div>
@@ -311,9 +311,9 @@ export default function RegistrationForm() {
           animate={{ opacity: 1, y: 0 }}
           className="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100"
         >
-          <div className="bg-gradient-to-r from-blue-600 to-blue-800 px-8 py-10 text-white text-center">
+          <div className="bg-gradient-to-r from-green-600 to-green-800 px-8 py-10 text-white text-center">
             <h2 className="text-3xl font-bold mb-2">Formulir Pendaftaran Peserta Didik Baru</h2>
-            <p className="text-blue-100">Lengkapi data diri calon peserta didik dengan benar dan valid.</p>
+            <p className="text-green-100">Lengkapi data diri calon peserta didik dengan benar dan valid.</p>
           </div>
 
           <form onSubmit={handleSubmit} className="p-8 space-y-8">
@@ -321,7 +321,7 @@ export default function RegistrationForm() {
             {textFields.length > 0 && (
               <div>
                 <h3 className="text-lg font-semibold text-slate-900 border-b pb-2 mb-6 flex items-center gap-2">
-                  <span className="bg-blue-100 text-blue-600 w-8 h-8 rounded-full flex items-center justify-center text-sm">1</span>
+                  <span className="bg-green-100 text-green-600 w-8 h-8 rounded-full flex items-center justify-center text-sm">1</span>
                   Data Pendaftar
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -336,7 +336,7 @@ export default function RegistrationForm() {
                   
                   <div className="col-span-1 md:col-span-2 mt-4">
                     <label className="block text-sm font-medium text-slate-700 mb-2 flex items-center gap-2">
-                      <MapPin size={18} className="text-blue-600" />
+                      <MapPin size={18} className="text-green-600" />
                       Tandai Lokasi Rumah di Peta
                     </label>
                     <p className="text-xs text-slate-500 mb-3">
@@ -345,9 +345,9 @@ export default function RegistrationForm() {
                     <MapPicker onLocationSelect={handleLocationSelect} />
                     
                     {distance !== null && (
-                      <div className="mt-3 p-3 bg-blue-50 border border-blue-100 rounded-lg flex items-center justify-between">
+                      <div className="mt-3 p-3 bg-green-50 border border-green-100 rounded-lg flex items-center justify-between">
                         <span className="text-sm text-slate-700">Jarak ke Sekolah:</span>
-                        <span className="font-bold text-blue-700">{distance.toFixed(2)} km</span>
+                        <span className="font-bold text-green-700">{distance.toFixed(2)} km</span>
                       </div>
                     )}
                   </div>
@@ -358,11 +358,11 @@ export default function RegistrationForm() {
             {fileFields.length > 0 && (
               <div>
                 <h3 className="text-lg font-semibold text-slate-900 border-b pb-2 mb-6 flex items-center gap-2">
-                  <span className="bg-blue-100 text-blue-600 w-8 h-8 rounded-full flex items-center justify-center text-sm">2</span>
+                  <span className="bg-green-100 text-green-600 w-8 h-8 rounded-full flex items-center justify-center text-sm">2</span>
                   Upload Berkas
                 </h3>
-                <p className="text-sm text-slate-500 mb-6 flex items-center gap-2 bg-blue-50 p-3 rounded-lg border border-blue-100">
-                  <AlertCircle size={16} className="text-blue-500 shrink-0" />
+                <p className="text-sm text-slate-500 mb-6 flex items-center gap-2 bg-green-50 p-3 rounded-lg border border-green-100">
+                  <AlertCircle size={16} className="text-green-500 shrink-0" />
                   Perhatian! Format File Dokumen JPG dan Ukuran file Maksimal 2 MB.
                 </p>
                 
@@ -387,7 +387,7 @@ export default function RegistrationForm() {
                     type="checkbox"
                     checked={isAgreed}
                     onChange={(e) => setIsAgreed(e.target.checked)}
-                    className="w-5 h-5 text-blue-600 rounded border-slate-300 focus:ring-blue-500"
+                    className="w-5 h-5 text-green-600 rounded border-slate-300 focus:ring-green-500"
                   />
                 </div>
                 <div className="text-sm text-slate-700">
@@ -401,7 +401,7 @@ export default function RegistrationForm() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-md hover:shadow-lg disabled:opacity-70 flex items-center justify-center"
+                className="w-full bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-md hover:shadow-lg disabled:opacity-70 flex items-center justify-center"
               >
                 {isSubmitting ? (
                   <>
