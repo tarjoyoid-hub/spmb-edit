@@ -525,20 +525,20 @@ export default function AdminDashboard() {
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                             <div className="flex items-center justify-end gap-2">
-                              <button onClick={() => setSelectedStudent(item)} className="text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600 px-2 py-1 rounded-md transition-colors">
+                              <button onClick={() => setSelectedStudent(item)} className="text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600 p-2 rounded-md transition-colors">
                                 <Eye size={18} />
                               </button>
                               {item.Status !== 'Lulus' && (
-                                <button onClick={() => handleUpdateStatus(item['No Pendaftaran'], 'Lulus')} className="text-green-600 hover:text-green-900 bg-green-50 hover:bg-green-100 dark:bg-green-900/30 dark:hover:bg-green-900/50 px-2 py-1 rounded-md transition-colors">
+                                <button onClick={() => handleUpdateStatus(item['No Pendaftaran'], 'Lulus')} className="text-green-600 hover:text-green-900 bg-green-50 hover:bg-green-100 dark:bg-green-900/30 dark:hover:bg-green-900/50 p-2 rounded-md transition-colors">
                                   <CheckCircle size={18} />
                                 </button>
                               )}
                               {item.Status !== 'Tidak Lulus' && (
-                                <button onClick={() => handleUpdateStatus(item['No Pendaftaran'], 'Tidak Lulus')} className="text-red-600 hover:text-red-900 bg-red-50 hover:bg-red-100 dark:bg-red-900/30 dark:hover:bg-red-900/50 px-2 py-1 rounded-md transition-colors">
+                                <button onClick={() => handleUpdateStatus(item['No Pendaftaran'], 'Tidak Lulus')} className="text-red-600 hover:text-red-900 bg-red-50 hover:bg-red-100 dark:bg-red-900/30 dark:hover:bg-red-900/50 p-2 rounded-md transition-colors">
                                   <XCircle size={18} />
                                 </button>
                               )}
-                              <button onClick={() => printCard(item)} className="text-blue-600 hover:text-blue-900 bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/30 dark:hover:bg-blue-900/50 px-2 py-1 rounded-md transition-colors">
+                              <button onClick={() => printCard(item)} className="text-blue-600 hover:text-blue-900 bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/30 dark:hover:bg-blue-900/50 px-2 py-2 rounded-md transition-colors">
                                 <Printer size={18} />
                               </button>
                             </div>
@@ -588,7 +588,7 @@ export default function AdminDashboard() {
                   className={cn(
                     "px-4 py-2 rounded-lg font-medium transition-colors whitespace-nowrap",
                     settingsTab === 'school'
-                      ? "bg-green-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400"
+                      ? "bg-green-100 text-green-700 dark:bg-blue-900/40 dark:text-blue-400"
                       : "text-green-600 hover:bg-green-100 dark:text-slate-400 dark:hover:bg-slate-700/50"
                   )}
                 >
@@ -599,7 +599,7 @@ export default function AdminDashboard() {
                   className={cn(
                     "px-4 py-2 rounded-lg font-medium transition-colors whitespace-nowrap",
                     settingsTab === 'form'
-                      ? "bg-green-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400"
+                      ? "bg-green-100 text-green-700 dark:bg-blue-900/40 dark:text-blue-400"
                       : "text-green-600 hover:bg-green-100 dark:text-slate-400 dark:hover:bg-slate-700/50"
                   )}
                 >
@@ -610,7 +610,7 @@ export default function AdminDashboard() {
                   className={cn(
                     "px-4 py-2 rounded-lg font-medium transition-colors whitespace-nowrap",
                     settingsTab === 'surat'
-                      ? "bg-green-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400"
+                      ? "bg-green-100 text-green-700 dark:bg-blue-900/40 dark:text-blue-400"
                       : "text-green-600 hover:bg-green-100 dark:text-slate-400 dark:hover:bg-slate-700/50"
                   )}
                 >
@@ -621,7 +621,7 @@ export default function AdminDashboard() {
                   className={cn(
                     "px-4 py-2 rounded-lg font-medium transition-colors whitespace-nowrap",
                     settingsTab === 'daftar-ulang'
-                      ? "bg-green-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400"
+                      ? "bg-green-100 text-green-700 dark:bg-blue-900/40 dark:text-blue-400"
                       : "text-green-600 hover:bg-green-100 dark:text-slate-400 dark:hover:bg-slate-700/50"
                   )}
                 >
@@ -632,7 +632,7 @@ export default function AdminDashboard() {
                   className={cn(
                     "px-4 py-2 rounded-lg font-medium transition-colors whitespace-nowrap",
                     settingsTab === 'kepala-sekolah'
-                      ? "bg-green-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400"
+                      ? "bg-green-100 text-green-700 dark:bg-blue-900/40 dark:text-blue-400"
                       : "text-green-600 hover:bg-green-100 dark:text-slate-400 dark:hover:bg-slate-700/50"
                   )}
                 >
@@ -643,7 +643,7 @@ export default function AdminDashboard() {
                   className={cn(
                     "px-4 py-2 rounded-lg font-medium transition-colors whitespace-nowrap",
                     settingsTab === 'panduan'
-                      ? "bg-green-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400"
+                      ? "bg-green-100 text-green-700 dark:bg-blue-900/40 dark:text-blue-400"
                       : "text-green-600 hover:bg-green-100 dark:text-slate-400 dark:hover:bg-slate-700/50"
                   )}
                 >
@@ -702,7 +702,7 @@ export default function AdminDashboard() {
                         onChange={e => setLocalSettings({...localSettings, tanggalCutoffUsia: e.target.value})}
                         className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                       />
-                      <p className="text-xs text-slate-500 mt-1">Tanggal yang digunakan sebagai acuan untuk menghitung usia pendaftar (contoh: 1 Juli tahun berjalan). Jika dikosongkan, menggunakan hari ini.</p>
+                      <p className="text-xs text-slate-500 mt-1">Tanggal yang digunakan sebagai acuan untuk menghitung usia pendaftar (contoh: 1 Juli tahun berjalan). Jika dikosongkan, menggunakan tanggal hari ini.</p>
                     </div>
                     <div>
                       <label className={cn("block text-sm font-medium mb-1", isDarkMode ? "text-slate-300" : "text-slate-700")}>Telepon</label>
