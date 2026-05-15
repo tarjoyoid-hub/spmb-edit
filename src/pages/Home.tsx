@@ -58,7 +58,7 @@ export default function Home() {
               className="text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6"
             >
               Membangun Generasi <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-green-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500">
                 Cerdas & Berkarakter
               </span>
             </motion.h1>
