@@ -11,7 +11,7 @@ const iconMap = {
 };
 
 const colorClasses = {
-  blue: 'bg-blue-100 text-blue-600',
+  green: 'bg-green-100 text-green-600',
   green: 'bg-green-100 text-green-600',
   purple: 'bg-purple-100 text-purple-600',
   amber: 'bg-amber-100 text-amber-600',
@@ -19,7 +19,7 @@ const colorClasses = {
 };
 
 const colorMap = {
-  FileDigit: 'blue',
+  FileDigit: 'green',
   FileBadge: 'green',
   FileImage: 'purple',
   FileText: 'amber',
@@ -54,21 +54,21 @@ export default function Guide() {
           animate={{ opacity: 1, y: 0 }}
           className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden"
         >
-          <div className="bg-blue-600 p-8 text-white">
+          <div className="bg-green-600 p-8 text-white">
             <h1 className="text-3xl font-bold mb-2">{judul}</h1>
-            <p className="text-blue-100">{deskripsi}</p>
+            <p className="text-green-100">{deskripsi}</p>
           </div>
 
           <div className="p-8">
             <div className="mb-10">
               <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                <FileText className="text-blue-600" />
+                <FileText className="text-green-600" />
                 Dokumen yang Harus Disiapkan
               </h2>
               {peringatan && (
-                <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 mb-6 flex items-start gap-3">
-                  <AlertCircle className="text-blue-600 shrink-0 mt-0.5" />
-                  <p className="text-sm text-blue-800">{peringatan}</p>
+                <div className="bg-green-50 border border-green-100 rounded-xl p-4 mb-6 flex items-start gap-3">
+                  <AlertCircle className="text-green-600 shrink-0 mt-0.5" />
+                  <p className="text-sm text-green-800">{peringatan}</p>
                 </div>
               )}
 
@@ -79,7 +79,7 @@ export default function Guide() {
                   const colorClass = colorClasses[colorKey as keyof typeof colorClasses];
                   
                   return (
-                    <div key={doc.id} className="border border-slate-200 rounded-xl p-5 flex gap-4 items-start hover:border-blue-300 transition-colors">
+                    <div key={doc.id} className="border border-slate-200 rounded-xl p-5 flex gap-4 items-start hover:border-green-300 transition-colors">
                       <div className={`${colorClass} p-3 rounded-lg shrink-0`}>
                         <IconComponent size={24} />
                       </div>
@@ -113,7 +113,7 @@ export default function Guide() {
             <div className="flex justify-center pt-6 border-t border-slate-100">
               <Link
                 to="/daftar"
-                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+                className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
               >
                 Mulai Pendaftaran <ArrowRight size={20} />
               </Link>
