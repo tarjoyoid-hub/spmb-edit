@@ -11,7 +11,7 @@ const iconMap = {
 };
 
 const colorClasses = {
-  green: 'bg-green-100 text-green-600',
+  blue: 'bg-blue-100 text-blue-600',
   green: 'bg-green-100 text-green-600',
   purple: 'bg-purple-100 text-purple-600',
   amber: 'bg-amber-100 text-amber-600',
@@ -19,7 +19,7 @@ const colorClasses = {
 };
 
 const colorMap = {
-  FileDigit: 'green',
+  FileDigit: 'blue',
   FileBadge: 'green',
   FileImage: 'purple',
   FileText: 'amber',
