@@ -599,7 +599,7 @@ export default function AdminDashboard() {
                   className={cn(
                     "px-4 py-2 rounded-lg font-medium transition-colors whitespace-nowrap",
                     settingsTab === 'form'
-                      ? "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400"
+                      ? "bg-blue-100 text-blue-900 dark:bg-blue-900/40 dark:text-blue-400"
                       : "text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-700/50"
                   )}
                 >
