@@ -121,7 +121,7 @@ export default function Home() {
                 desc: "Menerapkan kurikulum merdeka belajar yang adaptif dengan perkembangan zaman dan teknologi."
               },
               {
-                icon: <Users className="text-green-500" size={32} />,
+                icon: <Users className="text-blue-500" size={32} />,
                 title: "Guru Profesional",
                 desc: "Dididik oleh tenaga pengajar tersertifikasi, berpengalaman, dan berdedikasi tinggi pada pendidikan."
               },
