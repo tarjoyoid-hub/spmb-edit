@@ -26,7 +26,7 @@ export default function Navbar() {
             {settings?.logoSekolah ? (
               <img src={settings.logoSekolah} alt="Logo Sekolah" className="h-10 w-auto object-contain" referrerPolicy="no-referrer" />
             ) : (
-              <div className="bg-blue-600 p-2 rounded-lg text-white">
+              <div className="bg-green-600 p-2 rounded-lg text-white">
                 <GraduationCap size={24} />
               </div>
             )}
@@ -42,8 +42,8 @@ export default function Navbar() {
                 key={link.path}
                 to={link.path}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-blue-600",
-                  location.pathname === link.path ? "text-blue-600" : "text-slate-600"
+                  "text-sm font-medium transition-colors hover:text-green-600",
+                  location.pathname === link.path ? "text-green-600" : "text-slate-600"
                 )}
               >
                 {link.name}
@@ -87,7 +87,7 @@ export default function Navbar() {
                   className={cn(
                     "block px-3 py-2 rounded-md text-base font-medium",
                     location.pathname === link.path
-                      ? "bg-blue-50 text-blue-600"
+                      ? "bg-green-50 text-green-600"
                       : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
                   )}
                 >
