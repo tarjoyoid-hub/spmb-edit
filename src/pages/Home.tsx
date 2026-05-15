@@ -34,7 +34,7 @@ export default function Home() {
           className={`absolute inset-0 bg-cover bg-center ${settings?.gambarHeaderBeranda ? 'opacity-30' : 'opacity-5'}`}
           style={{ backgroundImage: `url('${settings?.gambarHeaderBeranda || 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop'}')` }}
         ></div>
-        <div className={`absolute inset-0 bg-gradient-to-br from-blue-50/90 via-white/80 to-green-50/90 ${settings?.gambarHeaderBeranda ? '' : 'backdrop-blur-sm'}`}></div>
+        <div className={`absolute inset-0 bg-gradient-to-br from-green-50/90 via-white/80 to-green-50/90 ${settings?.gambarHeaderBeranda ? '' : 'backdrop-blur-sm'}`}></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
@@ -42,11 +42,11 @@ export default function Home() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full font-medium text-sm mb-8 shadow-sm border ${isClosed ? 'bg-red-100 text-red-700 border-red-200' : 'bg-blue-100 text-blue-700 border-blue-200'}`}
+              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full font-medium text-sm mb-8 shadow-sm border ${isClosed ? 'bg-red-100 text-red-700 border-red-200' : 'bg-green-100 text-green-700 border-green-200'}`}
             >
               <span className="relative flex h-3 w-3">
-                {!isClosed && <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>}
-                <span className={`relative inline-flex rounded-full h-3 w-3 ${isClosed ? 'bg-red-500' : 'bg-blue-500'}`}></span>
+                {!isClosed && <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>}
+                <span className={`relative inline-flex rounded-full h-3 w-3 ${isClosed ? 'bg-red-500' : 'bg-green-500'}`}></span>
               </span>
               {isClosed ? `Penerimaan Peserta Didik Baru ${new Date().getFullYear()} Telah Ditutup` : `Penerimaan Peserta Didik Baru ${new Date().getFullYear()} Telah Dibuka`}
             </motion.div>
@@ -58,7 +58,7 @@ export default function Home() {
               className="text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6"
             >
               Membangun Generasi <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-green-500">
                 Cerdas & Berkarakter
               </span>
             </motion.h1>
@@ -88,7 +88,7 @@ export default function Home() {
               ) : (
                 <Link
                   to="/daftar"
-                  className="inline-flex justify-center items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+                  className="inline-flex justify-center items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
                 >
                   Daftar Sekarang <ChevronRight size={20} />
                 </Link>
@@ -116,7 +116,7 @@ export default function Home() {
           >
             {[
               {
-                icon: <BookOpen className="text-blue-500" size={32} />,
+                icon: <BookOpen className="text-green-500" size={32} />,
                 title: "Kurikulum Modern",
                 desc: "Menerapkan kurikulum merdeka belajar yang adaptif dengan perkembangan zaman dan teknologi."
               },
@@ -186,7 +186,7 @@ export default function Home() {
               className="bg-slate-50 rounded-3xl p-8 md:p-10 border border-slate-100"
             >
               <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                <span className="bg-blue-100 text-blue-600 p-2 rounded-lg"><Trophy size={24} /></span>
+                <span className="bg-green-100 text-green-600 p-2 rounded-lg"><Trophy size={24} /></span>
                 Visi & Misi
               </h3>
               
@@ -263,8 +263,8 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="relative z-10 flex flex-col items-center text-center"
               >
-                <div className="w-20 h-20 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center mb-6 shadow-xl relative group hover:bg-blue-600 transition-colors duration-300">
-                  <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold text-sm border-4 border-slate-900">
+                <div className="w-20 h-20 rounded-2xl bg-slate-800 border border-slate-700 flex items-center justify-center mb-6 shadow-xl relative group hover:bg-green-600 transition-colors duration-300">
+                  <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center font-bold text-sm border-4 border-slate-900">
                     {item.step}
                   </div>
                   <div className="text-slate-300 group-hover:text-white transition-colors">
