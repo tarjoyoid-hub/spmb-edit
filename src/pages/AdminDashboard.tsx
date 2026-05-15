@@ -452,7 +452,7 @@ export default function AdminDashboard() {
                 <button
                   onClick={fetchData}
                   disabled={isLoading}
-                  className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors shadow-sm whitespace-nowrap disabled:opacity-70"
+                  className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors shadow-sm whitespace-nowrap disabled:opacity-50"
                 >
                   <RefreshCw size={16} className={cn(isLoading && "animate-spin")} /> Segarkan
                 </button>
@@ -525,20 +525,20 @@ export default function AdminDashboard() {
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                             <div className="flex items-center justify-end gap-2">
-                              <button onClick={() => setSelectedStudent(item)} className="text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600 px-2 py-1 rounded transition-colors" title="Lihat Detail">
+                              <button onClick={() => setSelectedStudent(item)} className="text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600 px-2 py-1 rounded-md transition-colors">
                                 <Eye size={18} />
                               </button>
                               {item.Status !== 'Lulus' && (
-                                <button onClick={() => handleUpdateStatus(item['No Pendaftaran'], 'Lulus')} className="text-green-600 hover:text-green-900 bg-green-50 hover:bg-green-100 dark:bg-green-900/30 dark:hover:bg-green-900/50 px-2 py-1 rounded transition-colors" title="Ubah ke Lulus">
+                                <button onClick={() => handleUpdateStatus(item['No Pendaftaran'], 'Lulus')} className="text-green-600 hover:text-green-900 bg-green-50 hover:bg-green-100 dark:bg-green-900/30 dark:hover:bg-green-900/50 px-2 py-1 rounded-md transition-colors">
                                   <CheckCircle size={18} />
                                 </button>
                               )}
                               {item.Status !== 'Tidak Lulus' && (
-                                <button onClick={() => handleUpdateStatus(item['No Pendaftaran'], 'Tidak Lulus')} className="text-red-600 hover:text-red-900 bg-red-50 hover:bg-red-100 dark:bg-red-900/30 dark:hover:bg-red-900/50 px-2 py-1 rounded transition-colors" title="Ubah ke Tidak Lulus">
+                                <button onClick={() => handleUpdateStatus(item['No Pendaftaran'], 'Tidak Lulus')} className="text-red-600 hover:text-red-900 bg-red-50 hover:bg-red-100 dark:bg-red-900/30 dark:hover:bg-red-900/50 px-2 py-1 rounded-md transition-colors">
                                   <XCircle size={18} />
                                 </button>
                               )}
-                              <button onClick={() => printCard(item)} className="text-blue-600 hover:text-blue-900 bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/30 dark:hover:bg-blue-900/50 px-2 py-1 rounded transition-colors" title="Cetak Kartu">
+                              <button onClick={() => printCard(item)} className="text-blue-600 hover:text-blue-900 bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/30 dark:hover:bg-blue-900/50 px-2 py-1 rounded-md transition-colors">
                                 <Printer size={18} />
                               </button>
                             </div>
@@ -554,7 +554,7 @@ export default function AdminDashboard() {
               {!isLoading && filteredData.length > 0 && (
                 <div className={cn("px-6 py-4 border-t flex items-center justify-between", isDarkMode ? "border-slate-700 bg-slate-800" : "border-slate-200 bg-white")}>
                   <div className="text-sm text-slate-500 dark:text-slate-400">
-                    Menampilkan <span className="font-medium">{(currentPage - 1) * itemsPerPage + 1}</span> hingga <span className="font-medium">{Math.min(currentPage * itemsPerPage, filteredData.length)}</span> dari <span className="font-medium">{filteredData.length}</span> data
+                    Menampilkan <span className="font-medium">{(currentPage - 1) * itemsPerPage + 1}</span> hingga <span className="font-medium">{Math.min(currentPage * itemsPerPage, filteredData.length)}</span> dari <span className="font-medium">{filteredData.length}</span> hasil
                   </div>
                   <div className="flex gap-2">
                     <button
@@ -600,7 +600,7 @@ export default function AdminDashboard() {
                     "px-4 py-2 rounded-lg font-medium transition-colors whitespace-nowrap",
                     settingsTab === 'form'
                       ? "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400"
-                      : "text-red-600 hover:bg-green-200 dark:text-slate-400 dark:hover:bg-slate-700/50"
+                      : "text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-700/50"
                   )}
                 >
                   Pengaturan Formulir
@@ -611,7 +611,7 @@ export default function AdminDashboard() {
                     "px-4 py-2 rounded-lg font-medium transition-colors whitespace-nowrap",
                     settingsTab === 'surat'
                       ? "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400"
-                      : "text-red-600 hover:bg-green-200 dark:text-slate-400 dark:hover:bg-slate-700/50"
+                      : "text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-700/50"
                   )}
                 >
                   Pengaturan Surat
@@ -622,7 +622,7 @@ export default function AdminDashboard() {
                     "px-4 py-2 rounded-lg font-medium transition-colors whitespace-nowrap",
                     settingsTab === 'daftar-ulang'
                       ? "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400"
-                      : "text-red-600 hover:bg-green-200 dark:text-slate-400 dark:hover:bg-slate-700/50"
+                      : "text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-700/50"
                   )}
                 >
                   Pengaturan Daftar Ulang
@@ -633,7 +633,7 @@ export default function AdminDashboard() {
                     "px-4 py-2 rounded-lg font-medium transition-colors whitespace-nowrap",
                     settingsTab === 'kepala-sekolah'
                       ? "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400"
-                      : "text-red-600 hover:bg-green-200 dark:text-slate-400 dark:hover:bg-slate-700/50"
+                      : "text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-700/50"
                   )}
                 >
                   Kepala Sekolah
@@ -644,7 +644,7 @@ export default function AdminDashboard() {
                     "px-4 py-2 rounded-lg font-medium transition-colors whitespace-nowrap",
                     settingsTab === 'panduan'
                       ? "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-400"
-                      : "text-red-600 hover:bg-green-200 dark:text-slate-400 dark:hover:bg-slate-700/50"
+                      : "text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-700/50"
                   )}
                 >
                   Panduan Pendaftaran
@@ -702,7 +702,7 @@ export default function AdminDashboard() {
                         onChange={e => setLocalSettings({...localSettings, tanggalCutoffUsia: e.target.value})}
                         className={cn("w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500", isDarkMode ? "bg-slate-900 border-slate-700 text-white" : "bg-white border-slate-300")}
                       />
-                      <p className="text-xs text-slate-500 mt-1">Tanggal yang digunakan sebagai acuan untuk menghitung usia pendaftar (contoh: 1 Juli tahun berjalan). Jika dikosongkan, menggunakan tanggal saat pengisian pendaftaran.</p>
+                      <p className="text-xs text-slate-500 mt-1">Tanggal yang digunakan sebagai acuan untuk menghitung usia pendaftar (contoh: 1 Juli tahun berjalan). Jika dikosongkan, menggunakan hari ini.</p>
                     </div>
                     <div>
                       <label className={cn("block text-sm font-medium mb-1", isDarkMode ? "text-slate-300" : "text-slate-700")}>Telepon</label>
