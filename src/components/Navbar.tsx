@@ -26,7 +26,7 @@ export default function Navbar() {
             {settings?.logoSekolah ? (
               <img src={settings.logoSekolah} alt="Logo Sekolah" className="h-10 w-auto object-contain" referrerPolicy="no-referrer" />
             ) : (
-              <div className="bg-green-600 p-2 rounded-lg text-white">
+              <div className="bg-green-900 p-2 rounded-lg text-white">
                 <GraduationCap size={24} />
               </div>
             )}
@@ -51,7 +51,7 @@ export default function Navbar() {
             ))}
             <Link
               to="/daftar"
-              className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-md hover:shadow-lg"
+              className="bg-green-900 hover:bg-green-700 text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-md hover:shadow-lg"
             >
               Daftar Sekarang
             </Link>
