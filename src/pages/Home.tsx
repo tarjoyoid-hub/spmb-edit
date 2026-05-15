@@ -116,7 +116,7 @@ export default function Home() {
           >
             {[
               {
-                icon: <BookOpen className="text-green-500" size={32} />,
+                icon: <BookOpen className="text-red-500" size={32} />,
                 title: "Kurikulum Modern",
                 desc: "Menerapkan kurikulum merdeka belajar yang adaptif dengan perkembangan zaman dan teknologi."
               },
