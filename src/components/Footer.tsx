@@ -14,7 +14,7 @@ export default function Footer() {
               {settings?.logoSekolah ? (
                 <img src={settings.logoSekolah} alt="Logo Sekolah" className="h-10 w-auto object-contain bg-white p-1 rounded" referrerPolicy="no-referrer" />
               ) : (
-                <div className="bg-blue-600 p-2 rounded-lg text-white">
+                <div className="bg-green-600 p-2 rounded-lg text-white">
                   <GraduationCap size={24} />
                 </div>
               )}
@@ -30,9 +30,9 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4">Tautan Cepat</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/" className="hover:text-blue-400 transition-colors">Beranda</Link></li>
-              <li><Link to="/daftar" className="hover:text-blue-400 transition-colors">Pendaftaran PPDB</Link></li>
-              <li><Link to="/admin" className="hover:text-blue-400 transition-colors">Login Admin</Link></li>
+              <li><Link to="/" className="hover:text-green-400 transition-colors">Beranda</Link></li>
+              <li><Link to="/daftar" className="hover:text-green-400 transition-colors">Pendaftaran PPDB</Link></li>
+              <li><Link to="/admin" className="hover:text-green-400 transition-colors">Login Admin</Link></li>
             </ul>
           </div>
           
@@ -40,15 +40,15 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">Hubungi Kami</h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-3">
-                <MapPin size={18} className="text-blue-500 shrink-0 mt-0.5" />
+                <MapPin size={18} className="text-green-500 shrink-0 mt-0.5" />
                 <span>{settings?.alamat || 'Dk. Dranan, Ds. Yosorejo, Kec. Petungkriyono, Kab. Pekalongan'}</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone size={18} className="text-blue-500 shrink-0" />
+                <Phone size={18} className="text-green-500 shrink-0" />
                 <span>{settings?.telepon || '0856-4260-0190'}</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail size={18} className="text-blue-500 shrink-0" />
+                <Mail size={18} className="text-green-500 shrink-0" />
                 <span>{settings?.email || 'sdn3yosorejo@gmail.com'}</span>
               </li>
             </ul>
