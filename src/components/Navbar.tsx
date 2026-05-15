@@ -51,7 +51,7 @@ export default function Navbar() {
             ))}
             <Link
               to="/daftar"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-md hover:shadow-lg"
+              className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full text-sm font-medium transition-all shadow-md hover:shadow-lg"
             >
               Daftar Sekarang
             </Link>
