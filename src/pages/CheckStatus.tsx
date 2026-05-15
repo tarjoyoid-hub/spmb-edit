@@ -270,7 +270,7 @@ export default function CheckStatus() {
   return (
     <div className="min-h-screen bg-slate-50 py-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
       <div className="max-w-md w-full">
-        <Link to="/" className="inline-flex items-center text-sm text-slate-500 hover:text-blue-600 mb-6 transition-colors">
+        <Link to="/" className="inline-flex items-center text-sm text-slate-500 hover:text-green-600 mb-6 transition-colors">
           <ArrowLeft size={16} className="mr-1" /> Kembali ke Beranda
         </Link>
         
@@ -279,9 +279,9 @@ export default function CheckStatus() {
           animate={{ opacity: 1, y: 0 }}
           className="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100"
         >
-          <div className="bg-gradient-to-r from-blue-600 to-blue-800 px-8 py-8 text-white text-center">
+          <div className="bg-gradient-to-r from-green-600 to-green-800 px-8 py-8 text-white text-center">
             <h2 className="text-2xl font-bold mb-2">Cek Status Kelulusan</h2>
-            <p className="text-blue-100 text-sm">Masukkan nomor pendaftaran Anda untuk melihat hasil seleksi PPDB.</p>
+            <p className="text-green-100 text-sm">Masukkan nomor pendaftaran Anda untuk melihat hasil seleksi PPDB.</p>
           </div>
 
           <div className="p-8">
@@ -293,13 +293,13 @@ export default function CheckStatus() {
                   required
                   value={noPendaftaran}
                   onChange={(e) => setNoPendaftaran(e.target.value)}
-                  className="flex-grow px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                  className="flex-grow px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors"
                   placeholder="Contoh: PPDB-2024-001"
                 />
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-medium transition-colors disabled:opacity-70 flex items-center justify-center"
+                  className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-medium transition-colors disabled:opacity-70 flex items-center justify-center"
                 >
                   {isLoading ? <Loader2 className="animate-spin" size={20} /> : <Search size={20} />}
                 </button>
