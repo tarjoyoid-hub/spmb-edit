@@ -63,14 +63,7 @@ export default function Home() {
               </span>
             </motion.h1>
             
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed"
-            >
-              Bergabunglah bersama {settings?.namaSekolah || 'SD Negeri 03 Yosorejo'}. Kami berkomitmen memberikan pendidikan dasar terbaik dengan fasilitas modern dan tenaga pendidik profesional.
-            </motion.p>
+
 
 {/* Tambahkan gambar di sini */}
 <motion.div
@@ -85,6 +78,21 @@ export default function Home() {
     className="rounded-2xl shadow-xl max-w-2xl mx-auto w-full"
   />
 </motion.div>
+
+
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed"
+            >
+              Bergabunglah bersama {settings?.namaSekolah || 'SD Negeri 03 Yosorejo'}. Kami berkomitmen memberikan pendidikan dasar terbaik dengan fasilitas modern dan tenaga pendidik profesional.
+            </motion.p>
+
+
+
+
 
           </div>
         </div>
