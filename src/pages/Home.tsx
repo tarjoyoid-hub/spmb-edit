@@ -71,6 +71,21 @@ export default function Home() {
             >
               Bergabunglah bersama {settings?.namaSekolah || 'SD Negeri 03 Yosorejo'}. Kami berkomitmen memberikan pendidikan dasar terbaik dengan fasilitas modern dan tenaga pendidik profesional.
             </motion.p>
+
+{/* Tambahkan gambar di sini */}
+<motion.div
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.6, delay: 0.3 }}
+  className="mt-12 mb-10"
+>
+  <img 
+    src={settings?.gambarHeroUtama || "https://images.unsplash.com/photo-1427504494785-cdaa41d54f60?q=80&w=1200&auto=format&fit=crop"}
+    alt="Siswa cerdas dan berkarakter"
+    className="rounded-2xl shadow-xl max-w-2xl mx-auto w-full"
+  />
+</motion.div>
+
           </div>
         </div>
       </section>
