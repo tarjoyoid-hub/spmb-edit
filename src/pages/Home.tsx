@@ -80,7 +80,7 @@ export default function Home() {
   className="mt-12 mb-10"
 >
   <img 
-    src={settings?.gambarHeroUtama || "https://images.unsplash.com/photo-1427504494785-cdaa41d54f60?q=80&w=1200&auto=format&fit=crop"}
+    src={settings?.gambarHeroUtama || "https://babelpos.disway.id/upload/b036491a2e9d8e76e70b0e23ea2cf11a.jpg?q=80&w=1200&auto=format&fit=crop"}
     alt="Siswa cerdas dan berkarakter"
     className="rounded-2xl shadow-xl max-w-2xl mx-auto w-full"
   />
