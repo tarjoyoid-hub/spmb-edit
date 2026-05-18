@@ -75,7 +75,7 @@ export default function Home() {
   <img 
     src={settings?.gambarHeroUtama || "https://i.imgur.com/3B7Wey0.jpg"}
     alt="" 
-    className=" max-w-md mx-auto w-full"
+    className=" max-w-xs mx-auto w-full"
   />
 </motion.div>
 
