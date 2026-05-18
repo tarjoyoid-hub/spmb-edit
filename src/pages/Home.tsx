@@ -73,7 +73,7 @@ export default function Home() {
   className="mt-12 mb-10"
 >
   <img 
-    src={settings?.gambarHeroUtama || "https://chatgpt.com/s/m_6a0ae3ddee0c819191416a9f6743043a?q=80&w=1200&auto=format&fit=crop"}
+    src={settings?.gambarHeroUtama || "https://imgur.com/3B7Wey0?q=80&w=1200&auto=format&fit=crop"}
     alt="Siswa cerdas dan berkarakter"
     className="rounded-2xl shadow-xl max-w-2xl mx-auto w-full"
   />
