@@ -67,16 +67,15 @@ export default function Home() {
 
 {/* Tambahkan gambar di sini */}
 <motion.div
-  initial={{ opacity: 0, scale: 0.9 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 0.6, delay: 0.3 }}
-  className="mt-12 mb-10"
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.6, delay: 0.3 }}
+  className="mt-12 mb-10"
 >
-  <img 
-    src={settings?.gambarHeroUtama || "https://imgur.com/3B7Wey0"}
-    alt="Siswa cerdas dan berkarakter"
-    className="rounded-2xl shadow-xl max-w-2xl mx-auto w-full"
-  />
+  <img 
+    src={settings?.gambarHeroUtama || "https://imgur.com/3B7Wey0"}
+    className="rounded-2xl shadow-xl max-w-2xl mx-auto w-full"
+  />
 </motion.div>
 
 
