@@ -70,12 +70,15 @@ export default function Home() {
   initial={{ opacity: 0, scale: 0.9 }}
   animate={{ opacity: 1, scale: 1 }}
   transition={{ duration: 0.6, delay: 0.3 }}
-  className="mt-12 mb-10"
+  // Tambahkan flex dan justify-center untuk memastikan posisi tengah di semua layar
+  className="mt-12 mb-10 flex justify-center w-full"
 >
   <img 
     src={settings?.gambarHeroUtama || "https://i.imgur.com/3B7Wey0.jpg"}
-    alt="" 
-    className=" max-w-xs mx-auto w-full"
+    alt="Hero Image" 
+    // Tambahkan h-auto, object-contain, dan block
+    className="w-full max-w-xs h-auto object-contain block mx-auto"
+    loading="lazy"
   />
 </motion.div>
 
